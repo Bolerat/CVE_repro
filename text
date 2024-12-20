@@ -1,0 +1,11 @@
+import random
+import requests
+
+random_numbers = [random.randint(1000, 9999) for _ in range(10)]
+url = "http://10.1.1.128"
+data = {'num': random_numbers}
+response = requests.post(url, json=data)
+
+print(response.status_code)
+print(response.text)
+print(random_numbers)
